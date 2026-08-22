@@ -9,6 +9,7 @@ public class NumPalindrome {
         else System.out.println(n+" is not a palindrome number");
 
         System.out.println("rev(n) = " + rev(n));
+        in.close();
     }
 
     static int rev(int n){

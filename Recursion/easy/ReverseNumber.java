@@ -6,6 +6,7 @@ class ReverseNumber{
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         System.out.println(rev2(n));
+        in.close();
     }
     static int sum = 0;
     static int rev1(int n){
