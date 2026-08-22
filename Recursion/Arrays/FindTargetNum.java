@@ -6,10 +6,9 @@ public class FindTargetNum {
     
     public static void main(String [] args){
 
-        int[] arr = {3,2,1,18,9,10}; int target = 10;
+        int[] arr = {3,2,1,18,9,10,3,3}; int target = 3;
         findTarget(arr, target, 0);
-        findMultiOccurence(arr, target, 0);
-        System.out.println(list);
+        System.out.println(findMultiOccurence(arr, target, 0, new ArrayList<>()));
     }
     static void findTarget(int [] arr, int target, int index){
         if(index == arr.length){
@@ -19,10 +18,10 @@ public class FindTargetNum {
             System.out.println(index);
         findTarget(arr, target, index+1);
     }
-    static ArrayList<Integer> list = new ArrayList<>();
-    static void findMultiOccurence(int[] arr, int target, int index){
-        if(index==arr.length) return;
+
+    static ArrayList<Integer> findMultiOccurence(int[] arr, int target, int index, ArrayList<Integer> list){
+        if(index==arr.length) return list;
         if(arr[index]==target) list.add(index);
-        findMultiOccurence(arr, target, index+1);
+        return findMultiOccurence(arr, target, index+1, list);
     }
 }
