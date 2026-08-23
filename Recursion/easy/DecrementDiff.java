@@ -3,12 +3,21 @@ import java.util.*;
 public class DecrementDiff {
     
     public static void main(String [] args){
-        fun(5);
+        funPre(5);
     }
-    static int fun(int n){
+
+    //pre increment
+    static int funPre(int n){
         if(n==0) return 1;
         System.out.println(n);
-        return fun(--n);
+        return funPre(--n);
+    }
+
+    //post increment throws error because the base condition will never be attained
+    static int funPost(int n){
+        if(n==0) return 1;
+        System.out.println(n);
+        return funPost(n--);
     }
     
 }
